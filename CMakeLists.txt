@@ -136,6 +136,22 @@ target_link_libraries(exaRawToCells
   ${OWL_LIBRARIES}
   )
 
+# ------------------------------------------------------------------
+# witcher lib
+# ------------------------------------------------------------------
+
+add_library(witcherExaBrick SHARED
+  exa/OptixRenderer.cpp
+  exa/TriangleMesh.cpp
+  exa/Texture.cpp
+  exa/ScalarField.cpp
+  exa/Regions.cpp
+  exa/ExaBricks.cpp
+  exa/ColorMapper.cpp
+  exa/Config.cpp
+  builder/builder.cpp
+  Witcher.cpp
+  )
 
 # ------------------------------------------------------------------
 # Tool to create some simple test data sets in the exa format
