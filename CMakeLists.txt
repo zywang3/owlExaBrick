@@ -104,18 +104,20 @@ add_executable(exaViewer
   glutViewer/OWLViewer.cpp
 
   exa/viewer.cpp
-  exa/TriangleMesh.cpp
-  exa/ScalarField.cpp
-  exa/Config.cpp
+  
+  #exa/TriangleMesh.cpp
+  #exa/ScalarField.cpp
+  #exa/Config.cpp
   exa/OptixRenderer.cpp
   exa/ExaBricks.cpp
-  exa/Regions.cpp
+  #exa/Regions.cpp
   exa/Texture.cpp
-  exa/ColorMapper.cpp
-  ${ptxCode}
+  #exa/ColorMapper.cpp
+  #${ptxCode}
   )
 target_link_libraries(exaViewer
   glui_static
+  witcherExaBrick
 
   ${OWL_LIBRARIES}
   ${OWL_VIEWER_LIBRARIES}
@@ -136,21 +138,16 @@ target_link_libraries(exaRawToCells
   ${OWL_LIBRARIES}
   )
 
-# ------------------------------------------------------------------
-# witcher lib
-# ------------------------------------------------------------------
-
 add_library(witcherExaBrick SHARED
-  exa/OptixRenderer.cpp
   exa/TriangleMesh.cpp
-  exa/Texture.cpp
   exa/ScalarField.cpp
-  exa/Regions.cpp
-  exa/ExaBricks.cpp
-  exa/ColorMapper.cpp
   exa/Config.cpp
-  builder/builder.cpp
-  Witcher.cpp
+  #exa/OptixRenderer.cpp
+  #exa/ExaBricks.cpp
+  exa/Regions.cpp
+  #exa/Texture.cpp
+  exa/ColorMapper.cpp
+  ${ptxCode}
   )
 
 # ------------------------------------------------------------------
